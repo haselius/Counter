@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tust/counter_bloc.dart';
+import 'package:tust/_bloc.dart';
 
 
 
@@ -17,9 +17,8 @@ class MyApp extends StatelessWidget {
         ),
         home: Scaffold(
           body: BlocProvider(
-              builder: (BuildContext context) => CounterBloc(),
-              child : CounterScreen()
-
+              create: (BuildContext context) => CounterBloc(),
+            child: CounterScreen()
           ),
         )
     );
@@ -37,7 +36,7 @@ class CounterScreen extends StatelessWidget {
       body:  BlocBuilder<CounterBloc, int>(
             builder: (BuildContext context, int state){
               return Center(child:
-              Text("Counte Value : $state",),
+              Text("Counter Value : $state",),
               );
             },
           ),
