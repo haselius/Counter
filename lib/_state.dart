@@ -1,9 +1,7 @@
 part of '_bloc.dart';
 
-
-class CounterState {
+class GetState{
  final int counter;
- CounterState({
- @required this.counter,
-});
+
+ GetState(this.counter);
 }
